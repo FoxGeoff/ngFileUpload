@@ -13,7 +13,7 @@ const UploadURL = 'http://localhost:3000/api/upload';
 export class AppComponent implements OnInit {
   title = 'Upload a File';
 
-  public uploader: FileUploader = new FileUploader({ url: UploadURL, itemAlias: 'photo' });
+  public uploader: FileUploader = new FileUploader({ url: UploadURL, itemAlias: 'photo', removeAfterUpload: false, autoUpload: false });
 
   ngOnInit() {
     this.uploader.onAfterAddingFile = (file) => { file.withCredentials = false; };
